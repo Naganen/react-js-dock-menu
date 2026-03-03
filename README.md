@@ -1,6 +1,6 @@
 # 🚀 React MacOS-Inspired Modern Dock Menu
 
-A sleek, interactive, and fully customizable bottom menu component built with **React** and **Bootstrap 5**, inspired by the iconic MacOS Dock. Designed to be a "Plug & Play" component for any React project.
+A sleek, interactive, and fully customizable bottom menu component built with **React** and **Bootstrap 5**, inspired by the iconic MacOS Dock.
 
 🔗 **Repository Link:** [https://github.com/Naganen/react-js-dock-menu](https://github.com/Naganen/react-js-dock-menu)
 
@@ -8,69 +8,34 @@ A sleek, interactive, and fully customizable bottom menu component built with **
 
 ## ✨ Features
 
+* **Prop-Driven Data:** Pass your menu structure as a prop for maximum flexibility.
 * **Smart Hybrid Control:** Smooth hover effect by default. It locks automatically during interactions (searching or browsing folders) and stays open until you click outside.
-* **MacOS "Notch" UI:** A subtle, elegant notch appears at the bottom of the screen when minimized, indicating the menu's presence.
-* **iOS-Style Folder System:** Sub-menus are grouped into grid-based folder windows, providing a familiar and clean mobile UI experience.
-* **Live Search & Auto-Expand:** Instant search across all items. Folders expand automatically if a matching result is found within them.
-* **Responsive & Adaptive:** Items wrap into new rows if they exceed 60% of the screen width, ensuring the menu never overflows the viewport.
-* **Dynamic FontAwesome Icons:** Manage your menu items easily using simple string identifiers for icons.
+* **MacOS "Notch" UI:** A subtle, elegant notch appears at the bottom of the screen when minimized.
+* **iOS-Style Folder System:** Sub-menus are grouped into grid-based folder windows.
+* **Live Search & Auto-Expand:** Instant search across all items. Folders expand automatically if a result is found.
+* **Responsive Grid:** Items automatically wrap into new rows if they exceed 60% of the screen width.
 
 ---
 
 ## 🛠️ Installation & Usage
 
-This component is designed for seamless integration. You can simply drop the component file into your project.
-
-### 1. Install Required Peer Dependencies
-
-Ensure you have Bootstrap and FontAwesome icons installed in your project:
+### 1. Install Peer Dependencies
 
 ```bash
 npm install bootstrap @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
 
 ```
 
-### 2. Import and Use
+### 2. How to Use
 
-Copy the component file into your project and import it as follows:
+Import the component and pass your `menuData` array as a prop:
 
 ```jsx
 import React from 'react';
-import RockSolidDock from './components/RockSolidDock';
+import DockMenu from './components/DockMenu';
 
-function App() {
-  return (
-    <div className="App">
-      {/* Your Page Content */}
-      <main style={{ height: '200vh', padding: '20px' }}>
-        <h1>Welcome to My App</h1>
-        <p>Scroll down or hover the bottom notch to see the Dock in action!</p>
-      </main>
-
-      {/* The Dock Component */}
-      <RockSolidDock />
-    </div>
-  );
-}
-
-export default App;
-
-```
-
----
-
-## ⚙️ Data Structure
-
-To customize the menu items, simply edit the `menuData` array inside the component. Each item can be a direct link or a folder containing children:
-
-```javascript
-const menuData = [
-  { 
-    id: 1, 
-    name: "Dashboard", 
-    icon: "faGauge", 
-    link: "/dashboard" 
-  },
+const myMenuData = [
+  { id: 1, name: "Dashboard", icon: "faGauge", link: "/dashboard" },
   { 
     id: 2, 
     name: "Settings", 
@@ -80,19 +45,44 @@ const menuData = [
       { id: 21, name: "Profile", link: "/profile", icon: "faUser" },
       { id: 22, name: "Security", link: "/security", icon: "faShieldHalved" }
     ]
-  }
+  },
+  { id: 4, name: "Messages", icon: "faEnvelope", link: "/messages" }
 ];
+
+function App() {
+  return (
+    <div className="App">
+      <h1>My Application</h1>
+      <DockMenu menuData={myMenuData} />
+    </div>
+  );
+}
 
 ```
 
 ---
 
+## ⚙️ Data Schema
+
+The `menuData` prop expects an array of objects with the following structure:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `id` | number/string | Unique identifier |
+| `name` | string | Label displayed under the icon |
+| `icon` | string | FontAwesome icon name (e.g., "faUser") |
+| `link` | string | URL for direct navigation |
+| `isFolder` | boolean | (Optional) Set to `true` to enable a sub-menu |
+| `children` | array | (Optional) Array of objects for sub-menu items |
+
+---
+
 ## 🎨 Tech Stack
 
-* **React** (Hooks: `useState`, `useEffect`, `useRef`)
-* **Bootstrap 5** (Layout & Form utilities)
-* **FontAwesome** (Scalable vector icons)
-* **CSS3** (Backdrop-filter blur, cubic-bezier transitions, and flexbox)
+* **React** (useState, useEffect, useRef)
+* **Bootstrap 5** (Layout & Styles)
+* **FontAwesome** (Icons)
+* **CSS3** (Backdrop blur & cubic-bezier transitions)
 
 ---
 
