@@ -1,58 +1,58 @@
 # 🚀 React MacOS-Inspired Modern Dock Menu
 
-A sleek, interactive, and fully customizable bottom menu component built with **React** and **Bootstrap 5**, inspired by the iconic MacOS Dock.
+A sleek, interactive, and highly flexible bottom menu component built with **React** and **Bootstrap 5**. This version is designed to be **library-agnostic**, meaning you can use Emojis, SVGs, or custom Image tags as icons without dependency errors.
 
 🔗 **Repository Link:** [https://github.com/Naganen/react-js-dock-menu](https://github.com/Naganen/react-js-dock-menu)
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-* **Prop-Driven Data:** Pass your menu structure as a prop for maximum flexibility.
-* **Smart Hybrid Control:** Smooth hover effect by default. It locks automatically during interactions (searching or browsing folders) and stays open until you click outside.
-* **MacOS "Notch" UI:** A subtle, elegant notch appears at the bottom of the screen when minimized.
-* **iOS-Style Folder System:** Sub-menus are grouped into grid-based folder windows.
-* **Live Search & Auto-Expand:** Instant search across all items. Folders expand automatically if a result is found.
-* **Responsive Grid:** Items automatically wrap into new rows if they exceed 60% of the screen width.
+* **Zero-Dependency Icons:** Use Emojis, SVGs, or `<img>` tags directly. No more "Element type is invalid" errors.
+* **Smart Hybrid Control:** Smooth hover effect that "locks" into place during active interactions (searching or browsing folders).
+* **MacOS "Notch" UI:** A minimal indicator at the bottom of the screen when the menu is hidden.
+* **Auto-Expanding Folders:** Live search scans through all items; if a match is found inside a folder, the folder opens automatically.
+* **Responsive Grid:** Menu items stay centered and wrap perfectly on smaller screens.
 
 ---
 
 ## 🛠️ Installation & Usage
 
-### 1. Install Peer Dependencies
+### 1. Requirements
+
+You only need **Bootstrap 5** for the basic layout styling:
 
 ```bash
-npm install bootstrap @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
+npm install bootstrap
 
 ```
 
-### 2. How to Use
+### 2. Implementation
 
-Import the component and pass your `menuData` array as a prop:
+Copy `DockMenu.jsx` into your project and pass your data via the `menuData` prop.
 
 ```jsx
 import React from 'react';
 import DockMenu from './components/DockMenu';
 
 const myMenuData = [
-  { id: 1, name: "Dashboard", icon: "faGauge", link: "/dashboard" },
+  { id: 1, name: "Dashboard", icon: "📊", link: "/dashboard" },
   { 
     id: 2, 
     name: "Settings", 
-    icon: "faFolder", 
+    icon: "⚙️", 
     isFolder: true,
     children: [
-      { id: 21, name: "Profile", link: "/profile", icon: "faUser" },
-      { id: 22, name: "Security", link: "/security", icon: "faShieldHalved" }
+      { id: 21, name: "Profile", icon: "👤", link: "/profile" },
+      { id: 22, name: "Security", icon: "🛡️", link: "/security" }
     ]
   },
-  { id: 4, name: "Messages", icon: "faEnvelope", link: "/messages" }
+  { id: 3, name: "Messages", icon: "✉️", link: "/messages" }
 ];
 
 function App() {
   return (
     <div className="App">
-      <h1>My Application</h1>
       <DockMenu menuData={myMenuData} />
     </div>
   );
@@ -64,25 +64,28 @@ function App() {
 
 ## ⚙️ Data Schema
 
-The `menuData` prop expects an array of objects with the following structure:
-
 | Property | Type | Description |
 | --- | --- | --- |
-| `id` | number/string | Unique identifier |
-| `name` | string | Label displayed under the icon |
-| `icon` | string | FontAwesome icon name (e.g., "faUser") |
-| `link` | string | URL for direct navigation |
-| `isFolder` | boolean | (Optional) Set to `true` to enable a sub-menu |
-| `children` | array | (Optional) Array of objects for sub-menu items |
+| `id` | number/string | Unique ID for React keys. |
+| `name` | string | Label displayed below the icon. |
+| `icon` | any | Can be an **Emoji**, **SVG code**, or **`<img>`** tag. |
+| `link` | string | Navigation URL. |
+| `isFolder` | boolean | If `true`, clicks will toggle the sub-menu window. |
+| `children` | array | Array of objects for sub-menu items (folders). |
 
 ---
 
 ## 🎨 Tech Stack
 
 * **React** (useState, useEffect, useRef)
-* **Bootstrap 5** (Layout & Styles)
-* **FontAwesome** (Icons)
-* **CSS3** (Backdrop blur & cubic-bezier transitions)
+* **Bootstrap 5** (Layout utilities)
+* **CSS3** (Backdrop-filter blur, Bezier transitions, and absolute positioning)
+
+---
+
+### 📝 Developer Note
+
+This component uses a **Focus-Lock** mechanism. When a user clicks the search bar or opens a folder, the menu stays visible even if the mouse leaves the area. It only minimizes when the user clicks anywhere outside the menu.
 
 ---
 
