@@ -6,6 +6,29 @@ A sleek, interactive, and highly flexible bottom menu component built with **Rea
 
 ---
 
+## 🖼️ Screenshots
+<p align="center">
+<b>📁 Closed State</b><br />
+<img src="https://naganen.com.tr/DockMenuImages/image4.png" width="90%" alt="Closed State" />
+</p>
+
+<p align="center">
+<b>📂 Open State</b><br />
+<img src="https://naganen.com.tr/DockMenuImages/image1.png" width="90%" alt="Open State" />
+</p>
+
+<p align="center">
+<b>📂 Folders & Sub-menus</b><br />
+<img src="https://naganen.com.tr/DockMenuImages/image2.png" width="90%" alt="Folders" />
+</p>
+
+<p align="center">
+<b>🔍 Integrated Search</b><br />
+<img src="https://naganen.com.tr/DockMenuImages/image3.png" width="90%" alt="Search" />
+</p>
+
+---
+
 ## ✨ Key Features
 
 * **Hybrid Search Engine:** Advanced real-time filtering that identifies matches in both top-level and nested items. Matching sub-items are intelligently grouped into a sleek "Search Capsule" next to their parent folder.
