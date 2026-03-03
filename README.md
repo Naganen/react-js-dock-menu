@@ -8,13 +8,14 @@ A sleek, interactive, and highly flexible bottom menu component built with **Rea
 
 ## ✨ Key Features
 
-* **Universal Icon Support:** Highly flexible icon rendering—works perfectly with **Emojis**, **SVGs**, **Custom Components**, or standard **Image tags**.
-* **Intelligent Interaction:** Seamlessly switches between a smooth "Hover" mode and a "Locked" focus mode during active navigation or searching.
-* **MacOS "Notch" UI:** Features a minimal, elegant notch at the bottom of the screen that acts as a subtle trigger for the menu.
-* **Folder System:** Supports nested menu items through a grid-based folder window, mimicking modern mobile and desktop operating systems.
-* **Integrated Search:** Includes a built-in search bar that filters all menu items in real-time.
-* **Auto-Expansion:** Smart search logic automatically opens the relevant folder if a matching result is found within a sub-menu.
-* **Responsive Design:** Fully adaptive grid that wraps items automatically to prevent overflow on smaller viewports.
+* **Hybrid Search Engine:** Advanced real-time filtering that identifies matches in both top-level and nested items. Matching sub-items are intelligently grouped into a sleek "Search Capsule" next to their parent folder.
+* **Adaptive Folder Pop-overs:** Features a smart window system that opens sub-menus directly above the active icon. The window is horizontally centered and uses a high-priority z-index to stay on top of all other elements.
+* **Persistent Icon Placement:** Unlike standard flex layouts, opening a folder or searching does not shift the position of existing icons, maintaining muscle memory for frequent users.
+* **Smart Folder Access during Search:** If a folder name matches a search term but its children do not, the folder remains interactive, allowing users to manually explore its contents while still in search mode.
+* **Responsive Grid Wrapping:** Built with a "Wrap-First" logic; both the main dock and the sub-menu windows automatically adjust their layout to fit smaller screens, preventing horizontal overflow.
+* **MacOS-Inspired "Notch" UI:** Includes a refined, centered notch that serves as a visual anchor and indicates the interactive state of the dock.
+* **Glassmorphism Aesthetics:** Utilizes high-end CSS `backdrop-filter: blur` and optimized `rgba` layering to provide a modern, translucent OS-level feel.
+* **Focus-Lock Mechanism:** Sophisticated `useRef` and `mousedown` handling keeps the menu expanded during complex interactions, such as searching or browsing deep folder structures.
 
 ---
 
