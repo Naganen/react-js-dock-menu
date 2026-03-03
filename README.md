@@ -34,22 +34,24 @@ npm install bootstrap
 Simply import the component and provide your configuration via the `menuData` prop:
 
 ```jsx
-import React from 'react';
-import DockMenu from './components/DockMenu';
+import React from "react";
+import DockMenu from "./DockMenu";
 
 const myMenuData = [
-  { id: 1, name: "Dashboard", icon: "📊", link: "/dashboard" },
-  { 
-    id: 2, 
-    name: "Settings", 
-    icon: "⚙️", 
+  { id: 1, name: "Home", icon: "🏠", link: "/" },
+  { id: 2, name: "Analytics", icon: "📈", link: "/analytics" },
+  {
+    id: 3,
+    name: "Projects",
+    icon: "📁",
     isFolder: true,
     children: [
-      { id: 21, name: "Profile", icon: "👤", link: "/profile" },
-      { id: 22, name: "Security", icon: "🛡️", link: "/security" }
-    ]
+      { id: 31, name: "Web App", icon: "🌐", link: "/projects/web" },
+      { id: 32, name: "Mobile", icon: "📱", link: "/projects/mobile" },
+      { id: 33, name: "Design", icon: "🎨", link: "/projects/design" },
+      { id: 34, name: "Back-end", icon: "⚙️", link: "/projects/server" },
+    ],
   },
-  { id: 3, name: "Messages", icon: "✉️", link: "/messages" }
 ];
 
 function App() {
@@ -60,6 +62,8 @@ function App() {
     </div>
   );
 }
+
+export default App;
 
 ```
 
