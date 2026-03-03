@@ -17,8 +17,8 @@ A sleek, interactive, and fully customizable bottom menu component built with **
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Naganen/react-js-dock-menu.git](https://github.com/Naganen/react-js-dock-menu.git)
-    cd react-modern-dock
+    git clone https://github.com/Naganen/react-js-dock-menu.git
+    cd react-js-dock-menu
     ```
 
 2.  **Install dependencies:**
