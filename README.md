@@ -96,10 +96,4 @@ const menuData = [
 
 ---
 
-### 📝 User Experience (UX) Note
-
-This component addresses common "hover-glitch" issues found in similar dock clones. By implementing a **Focus-Lock** mechanism, the menu remains stable while the user is actively typing in the search bar or navigating through sub-folders, closing only when an explicit "click outside" action occurs.
-
----
-
 MIT License © [Naganen](https://www.google.com/search?q=https://github.com/Naganen)
