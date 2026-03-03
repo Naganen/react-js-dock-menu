@@ -1,6 +1,6 @@
 # 🚀 React MacOS-Inspired Modern Dock Menu
 
-A sleek, interactive, and highly flexible bottom menu component built with **React** and **Bootstrap 5**. This version is designed to be **library-agnostic**, meaning you can use Emojis, SVGs, or custom Image tags as icons without dependency errors.
+A sleek, interactive, and highly flexible bottom menu component built with **React** and **Bootstrap 5**. Designed to bring a modern, OS-level navigation experience to web applications with minimal setup.
 
 🔗 **Repository Link:** [https://github.com/Naganen/react-js-dock-menu](https://github.com/Naganen/react-js-dock-menu)
 
@@ -8,11 +8,13 @@ A sleek, interactive, and highly flexible bottom menu component built with **Rea
 
 ## ✨ Key Features
 
-* **Zero-Dependency Icons:** Use Emojis, SVGs, or `<img>` tags directly. No more "Element type is invalid" errors.
-* **Smart Hybrid Control:** Smooth hover effect that "locks" into place during active interactions (searching or browsing folders).
-* **MacOS "Notch" UI:** A minimal indicator at the bottom of the screen when the menu is hidden.
-* **Auto-Expanding Folders:** Live search scans through all items; if a match is found inside a folder, the folder opens automatically.
-* **Responsive Grid:** Menu items stay centered and wrap perfectly on smaller screens.
+* **Universal Icon Support:** Highly flexible icon rendering—works perfectly with **Emojis**, **SVGs**, **Custom Components**, or standard **Image tags**.
+* **Intelligent Interaction:** Seamlessly switches between a smooth "Hover" mode and a "Locked" focus mode during active navigation or searching.
+* **MacOS "Notch" UI:** Features a minimal, elegant notch at the bottom of the screen that acts as a subtle trigger for the menu.
+* **Folder System:** Supports nested menu items through a grid-based folder window, mimicking modern mobile and desktop operating systems.
+* **Integrated Search:** Includes a built-in search bar that filters all menu items in real-time.
+* **Auto-Expansion:** Smart search logic automatically opens the relevant folder if a matching result is found within a sub-menu.
+* **Responsive Design:** Fully adaptive grid that wraps items automatically to prevent overflow on smaller viewports.
 
 ---
 
@@ -20,16 +22,16 @@ A sleek, interactive, and highly flexible bottom menu component built with **Rea
 
 ### 1. Requirements
 
-You only need **Bootstrap 5** for the basic layout styling:
+Ensure you have **Bootstrap 5** available in your project for layout utilities:
 
 ```bash
 npm install bootstrap
 
 ```
 
-### 2. Implementation
+### 2. Basic Implementation
 
-Copy `DockMenu.jsx` into your project and pass your data via the `menuData` prop.
+Simply import the component and provide your configuration via the `menuData` prop:
 
 ```jsx
 import React from 'react';
@@ -53,6 +55,7 @@ const myMenuData = [
 function App() {
   return (
     <div className="App">
+      {/* Your content */}
       <DockMenu menuData={myMenuData} />
     </div>
   );
@@ -64,28 +67,30 @@ function App() {
 
 ## ⚙️ Data Schema
 
+The `menuData` prop accepts an array of objects with the following structure:
+
 | Property | Type | Description |
 | --- | --- | --- |
-| `id` | number/string | Unique ID for React keys. |
-| `name` | string | Label displayed below the icon. |
-| `icon` | any | Can be an **Emoji**, **SVG code**, or **`<img>`** tag. |
-| `link` | string | Navigation URL. |
-| `isFolder` | boolean | If `true`, clicks will toggle the sub-menu window. |
-| `children` | array | Array of objects for sub-menu items (folders). |
+| `id` | number/string | Unique identifier for React rendering. |
+| `name` | string | The label displayed under the icon. |
+| `icon` | any | Any renderable content (Emoji, SVG, Image, etc.). |
+| `link` | string | The target URL for navigation. |
+| `isFolder` | boolean | Set to `true` to enable sub-menu functionality. |
+| `children` | array | (Optional) List of items to be displayed inside a folder. |
 
 ---
 
 ## 🎨 Tech Stack
 
-* **React** (useState, useEffect, useRef)
-* **Bootstrap 5** (Layout utilities)
-* **CSS3** (Backdrop-filter blur, Bezier transitions, and absolute positioning)
+* **React** (Functional Components, Hooks: `useState`, `useEffect`, `useRef`)
+* **Bootstrap 5** (Layout and form utilities)
+* **CSS3** (Backdrop-filter blur, custom cubic-bezier transitions, and flex-grid)
 
 ---
 
-### 📝 Developer Note
+### 📝 User Experience (UX) Note
 
-This component uses a **Focus-Lock** mechanism. When a user clicks the search bar or opens a folder, the menu stays visible even if the mouse leaves the area. It only minimizes when the user clicks anywhere outside the menu.
+The menu utilizes a **Click-Outside** listener and a **Focus-Lock** mechanism. This ensures that the menu remains stable and open while the user is actively searching or browsing folders, preventing accidental closures during precise interactions.
 
 ---
 
