@@ -3,36 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 
-const DockMenu = () => {
+const DockMenu = ({ menuData = [] }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFolder, setActiveFolder] = useState(null);
   const [isLocked, setIsLocked] = useState(false);
   const menuRef = useRef(null);
-
-  const menuData = [
-    { id: 1, name: "Dashboard", icon: "faGauge", link: "/dashboard" },
-    {
-      id: 2,
-      name: "Settings",
-      icon: "faFolder",
-      isFolder: true,
-      children: [
-        { id: 21, name: "Profile", link: "/profile", icon: "faUser" },
-        { id: 22, name: "Security", link: "/security", icon: "faShieldHalved" },
-      ],
-    },
-    {
-      id: 3,
-      name: "Reports",
-      icon: "faFolderOpen",
-      isFolder: true,
-      children: [
-        { id: 31, name: "Sales", link: "/sales", icon: "faMoneyBillTrendUp" },
-        { id: 32, name: "Traffic", link: "/traffic", icon: "faGlobe" },
-      ],
-    },
-    { id: 4, name: "Messages", icon: "faEnvelope", link: "/messages" },
-  ];
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -55,7 +30,7 @@ const DockMenu = () => {
       );
       if (firstMatch) setActiveFolder(firstMatch.id);
     }
-  }, [searchTerm]);
+  }, [searchTerm, menuData]);
 
   const filteredMenu = menuData.filter((item) => {
     const mainMatch = item.name
