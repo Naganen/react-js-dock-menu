@@ -183,9 +183,9 @@ const DockMenu = ({ menuData = [] }) => {
                     )}
                   </div>
                 ))
-              : // --- ARAMA MODU ---
+              : // --- SEARCH MOD ---
                 searchGroups.map((group) => {
-                  // Grup değilse (Tekil sonuç)
+                  // If result is not folder
                   if (!group.isGroup) {
                     return (
                       <div key={group.parent.id} className="dock-item-wrapper">
@@ -259,7 +259,7 @@ const DockMenu = ({ menuData = [] }) => {
                     );
                   }
 
-                  // Gruplandırılmış sonuçlar (Sub-menülerle birlikte)
+                  // If result is folder
                   return (
                     <div key={group.parent.id} className="search-group">
                       <div
