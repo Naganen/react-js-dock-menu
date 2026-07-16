@@ -6,7 +6,7 @@ A sleek, interactive, and highly flexible bottom menu component built with **Rea
 
 ## 🖼️ Preview
 <p align="center">
-  <img src="https://naganen.com.tr/DockMenuImages/image1.png" width="100%" alt="Main Preview">
+  <img src="https://i.ibb.co/MDB39Tw0/image1.png" width="100%" alt="Main Preview">
 </p>
 
 ---
@@ -27,22 +27,22 @@ A sleek, interactive, and highly flexible bottom menu component built with **Rea
 ## 🖼️ All Screenshots
 <p align="center">
 <b>📁 Closed State</b><br />
-<img src="https://ibb.co/0p7XS0b2" width="90%" alt="Closed State" />
+<img src="https://i.ibb.co/KcPGktvh/image4.png" width="90%" alt="Closed State" />
 </p>
 
 <p align="center">
 <b>📂 Open State</b><br />
-<img src="https://ibb.co/xSFR3v9T" width="90%" alt="Open State" />
+<img src="https://i.ibb.co/MDB39Tw0/image1.png" width="90%" alt="Open State" />
 </p>
 
 <p align="center">
 <b>📂 Folders & Sub-menus</b><br />
-<img src="https://ibb.co/Qv0ddg1r" width="90%" alt="Folders" />
+<img src="https://i.ibb.co/b5tJJ08z/image2.png" width="90%" alt="Folders" />
 </p>
 
 <p align="center">
 <b>🔍 Integrated Search</b><br />
-<img src="https://ibb.co/zWYrh555" width="90%" alt="Search" />
+<img src="https://i.ibb.co/DPytDbbb/image3.png" width="90%" alt="Search" />
 </p>
 
 ---
